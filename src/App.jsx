@@ -10,12 +10,15 @@ function App() {
     // console.log(count);
   };
   const handleScore = () => {
-    setScore(score + 1);
+    // score += 1;
+    const _score = score + 1;
+    setScore(_score);
     // setScore(score++);
-    if (score > 5) {
+    if (_score > 5) {
       setCount(0);
     }
-    console.log(score);
+    console.log("score:", score);
+    console.log("_score:", _score);
   };
 
   return (
