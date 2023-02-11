@@ -25,6 +25,10 @@ function App() {
     console.log("_score:", _score);
   };
 
+  const handleAddColor = () => {
+    
+  };
+
   return (
     <div className="App">
       {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>}
@@ -37,6 +41,8 @@ function App() {
       {color.map((c, i) => (
         <div key={i}>{c}</div>
       ))}
+      <hr />
+      <button onClick={handleAddColor}>Add a new Color</button>
     </div>
   );
 }
