@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const _colors = ["red", "green", "blue"];
+const _colors = ["red", "green", "blue", "purple", "yellow"];
 function App() {
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
