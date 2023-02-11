@@ -12,18 +12,20 @@ function App() {
   const handleScore = () => {
     // score += 1;
     const _score = score + 1;
+    console.log("score1:", score);
     setScore(_score);
+    console.log("score2:", score);
+
     // setScore(score++);
     if (_score > 5) {
       setCount(0);
     }
-    console.log("score:", score);
     console.log("_score:", _score);
   };
 
   return (
     <div className="App">
-      {/* {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>} */}
+      {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>}
       {/* {score > 5 && setCount(count - count)} */}
       {/* {score > 5 && setCount(0)} */}
       <button onClick={handleCount}>count is {count}</button>
