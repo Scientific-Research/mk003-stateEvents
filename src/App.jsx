@@ -5,7 +5,7 @@ const _colors = ["red", "green", "blue"];
 function App() {
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
-  const [color, setColor] = useState([]);
+  const [color, setColor] = useState([_colors]);
 
   const handleCount = () => {
     setCount(count + 1);
@@ -33,6 +33,10 @@ function App() {
       <button onClick={handleCount}>count is {count}</button>
       <hr />
       <button onClick={handleScore}>score = {score}</button>
+      <hr />
+      {color.map((c, i) => (
+        <div key={i}>{c}</div>
+      ))}
     </div>
   );
 }
