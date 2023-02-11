@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-const _colors = ["red", "green", "blue", "purple", "yellow"];
+const _colors = ["red", "green", "blue", "purple"];
 function App() {
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
@@ -26,7 +26,11 @@ function App() {
   };
 
   const handleAddColor = () => {
-    
+    // setColor(...color);
+    // const newColor = color + ' ' + color
+    setColor("yellow");
+    setColor(...color);
+    console.log("a color was added!");
   };
 
   return (
@@ -42,7 +46,7 @@ function App() {
         <div key={i}>{c}</div>
       ))}
       <hr />
-      <button onClick={handleAddColor}>Add a new Color</button>
+      <button onClick={handleAddColor}>Add a new Color = {color}</button>
     </div>
   );
 }
