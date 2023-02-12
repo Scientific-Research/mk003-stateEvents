@@ -43,7 +43,10 @@ function App() {
     <div>
       <div
         className="App"
-        style={score === 5 ? { background: "red" } : { background: "green" }}
+        //Entweder
+        // style={score >= 5 ? { background: "red" } : { background: "green" }}
+        //Oder
+        style={{ background: score >= 5 && "red" }}
       >
         {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>}
         {/* {score > 5 && setCount(count - count)} */}
