@@ -19,7 +19,7 @@ function App() {
     // console.log("score2:", score);
 
     // setScore(score++);
-    if (_score > 5) {
+    if (_score >= 5) {
       setCount(0);
     }
     console.log("_score:", _score);
