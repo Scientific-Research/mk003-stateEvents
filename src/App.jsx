@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./App.scss";
 
 const _colors = ["red", "green", "blue", "purple"];
 function App() {
@@ -14,9 +14,9 @@ function App() {
   const handleScore = () => {
     // score += 1;
     const _score = score + 1;
-    console.log("score1:", score);
+    // console.log("score1:", score);
     setScore(_score);
-    console.log("score2:", score);
+    // console.log("score2:", score);
 
     // setScore(score++);
     if (_score > 5) {
@@ -26,27 +26,38 @@ function App() {
   };
 
   const handleAddColor = () => {
-    // setColor(...color);
-    // const newColor = color + ' ' + color
-    setColor("yellow");
-    setColor(...color);
-    console.log("a color was added!");
+    const _color = [...color];
+    _color.push("yellow");
+    setColor(_color);
+    // color.push("navy");
+    // setColor([...color]);
+    console.log(color.length);
+    // if (color.length === 5) {
+    //   {
+    //     green;
+    //   }
+    // }
   };
-
+  // score.length > 0 &&
   return (
-    <div className="App">
-      {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>}
-      {/* {score > 5 && setCount(count - count)} */}
-      {/* {score > 5 && setCount(0)} */}
-      <button onClick={handleCount}>count is {count}</button>
-      <hr />
-      <button onClick={handleScore}>score = {score}</button>
-      <hr />
-      {color.map((c, i) => (
-        <div key={i}>{c}</div>
-      ))}
-      <hr />
-      <button onClick={handleAddColor}>Add a new Color = {color}</button>
+    <div>
+      <div
+        className="App"
+        style={score === 5 ? { background: "red" } : { background: "green" }}
+      >
+        {score > 0 && count > 0 && <p>Score and Count are no longer 0!</p>}
+        {/* {score > 5 && setCount(count - count)} */}
+        {/* {score > 5 && setCount(0)} */}
+        <button onClick={handleCount}>count is {count}</button>
+        <hr />
+        <button onClick={handleScore}>score = {score}</button>
+        <hr />
+        {color.map((c, i) => (
+          <div key={i}>{c}</div>
+        ))}
+        <hr />
+        <button onClick={handleAddColor}>Add a new Color</button>
+      </div>
     </div>
   );
 }
