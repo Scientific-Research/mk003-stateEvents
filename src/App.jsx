@@ -2,10 +2,13 @@ import { useState } from "react";
 import "./App.scss";
 
 const _colors = ["red", "green", "blue", "purple"];
+const _title = ["Hallo"];
+
 function App() {
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
   const [color, setColor] = useState([_colors]);
+  const [title, setTitle] = useState([_title]);
 
   const handleCount = () => {
     setCount(count + 1);
